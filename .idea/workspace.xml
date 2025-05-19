@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96e1efc7-5c8e-46bd-a70c-fbc59179f8dc" name="Changes" comment="Equipment implementation">
-      <change afterPath="$PROJECT_DIR$/src/org/example/events/BattleEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/example/events/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/example/events/EventEngine.java" afterDir="false" />
+    <list default="true" id="96e1efc7-5c8e-46bd-a70c-fbc59179f8dc" name="Changes" comment="Events implementation">
+      <change afterPath="$PROJECT_DIR$/src/org/example/annotations/SpecjalnaZdolnosc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/example/loader/AbilityLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/example/BattleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/BattleEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/example/Postac.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Postac.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/Protos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Protos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/Terranin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Terranin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/Zerg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Zerg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/events/EventEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/events/EventEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +44,9 @@
     "accountId": "36d478ab-e672-4a24-93fd-5c1f7f762aa8"
   }
 }]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
   "associatedIndex": 1
@@ -86,7 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1747149982326</updated>
       <workItem from="1747149982327" duration="82000" />
-      <workItem from="1747660129240" duration="3259000" />
+      <workItem from="1747660129240" duration="6281000" />
     </task>
     <task id="LOCAL-00001" summary="First base battle and base class implementations">
       <option name="closed" value="true" />
@@ -104,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747662408755</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Events implementation">
+      <option name="closed" value="true" />
+      <created>1747663679381</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747663679381</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +127,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First base battle and base class implementations" />
     <MESSAGE value="Equipment implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Equipment implementation" />
+    <MESSAGE value="Events implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Events implementation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

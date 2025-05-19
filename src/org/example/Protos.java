@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.annotations.SpecjalnaZdolnosc;
+
 public class Protos extends Postac implements Zdolnosc {
     private int mana;
 
@@ -15,9 +17,10 @@ public class Protos extends Postac implements Zdolnosc {
     }
 
     @Override
+    @SpecjalnaZdolnosc(name = "Psychiczny Cios", cost = 20)
     public void uzyj(Postac target) {
         if (mana >= 20) {
-            System.out.println(name + " używa psionic lash!");
+            System.out.println(name + " używa Psychicznego Ciosu!");
             target.obron(attack + 20);
             mana -= 20;
         } else {
@@ -27,5 +30,6 @@ public class Protos extends Postac implements Zdolnosc {
 
     public void regenerujMana(int amount) {
         mana += amount;
+        System.out.println(name + " odzyskuje " + amount + " many. (" + mana + "/50)");
     }
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.annotations.SpecjalnaZdolnosc;
+
 public class Zerg extends Postac implements Zdolnosc {
     public Zerg(String name) {
         super(name, 80, 20, 5);
@@ -12,6 +14,7 @@ public class Zerg extends Postac implements Zdolnosc {
     }
 
     @Override
+    @SpecjalnaZdolnosc(name = "Kwasowe Kłucie", cost = 0)
     public void uzyj(Postac target) {
         System.out.println(name + " używa kwasowego kłucia!");
         target.obron(attack + 15);

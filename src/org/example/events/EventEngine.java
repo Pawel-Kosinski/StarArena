@@ -4,6 +4,9 @@ import org.example.Postac;
 import org.example.Protos;
 import org.example.events.Event;
 
+import org.example.Postac;
+import org.example.Protos;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,9 +27,10 @@ public class EventEngine {
         ));
         events.add(new Event(
                 "Regeneracja Many",
-                p -> p instanceof Protos,
+                p -> p instanceof Protos proto && getMana(proto) < getMaxMana(proto),
                 p -> {
-                    ((Protos) p).regenerujMana(10);
+                    Protos proto = (Protos) p;
+                    proto.regenerujMana(10);
                     System.out.println(p.getName() + " odzyskał 10 many.");
                 }
         ));
@@ -77,6 +81,20 @@ public class EventEngine {
             case "Protos" -> 90;
             default -> getHp(p);
         };
+    }
+
+    private int getMaxMana(Protos p) {
+        return 50;
+    }
+
+    private int getMana(Protos p) {
+        try {
+            Field field = Protos.class.getDeclaredField("mana");
+            field.setAccessible(true);
+            return field.getInt(p);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void adjustAttack(Postac p, int amount) {
