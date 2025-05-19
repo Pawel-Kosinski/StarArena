@@ -22,7 +22,7 @@ public class EventEngine {
                 p -> p.czyZyje() && getHp(p) > 20,
                 p -> {
                     System.out.println(p.getName() + " trafił na pułapkę kolcową!");
-                    p.obron(5);
+                    p.obron(10);
                 }
         ));
         events.add(new Event(
@@ -38,7 +38,7 @@ public class EventEngine {
                 "Adrenalina",
                 p -> getHp(p) < getMaxHp(p) / 2,
                 p -> {
-                    adjustAttack(p, 5);
+                    p.dodajAtak(5);
                     System.out.println(p.getName() + " odczuwa napływ adrenaliny (+5 ataku)!");
                 }
         ));
@@ -46,8 +46,8 @@ public class EventEngine {
                 "Regeneracja",
                 p -> p.czyZyje() && getHp(p) < getMaxHp(p),
                 p -> {
-                    heal(p, 3);
-                    System.out.println(p.getName() + " regeneruje się (+3 HP)");
+                    heal(p, 10);
+                    System.out.println(p.getName() + " regeneruje się (+10 HP)");
                 }
         ));
 

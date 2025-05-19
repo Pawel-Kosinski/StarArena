@@ -22,9 +22,7 @@ public class Ekwipunek<T extends Przedmiot> {
     }
 
     public List<T> filtruj(Predicate<T> warunek) {
-        return items.stream()
-                .filter(warunek)
-                .toList();
+        return items.stream().filter(warunek).toList();
     }
 
     public List<T> wszystkie() {

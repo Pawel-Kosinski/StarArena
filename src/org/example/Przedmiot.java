@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Objects;
+
 public abstract class Przedmiot {
     protected String name;
     protected Rarity rarity;
@@ -20,5 +22,17 @@ public abstract class Przedmiot {
     @Override
     public String toString() {
         return String.format("%s [%s]", name, rarity);
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Przedmiot that = (Przedmiot) o;
+        return name.equals(that.name) && rarity == that.rarity;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, rarity);
     }
 }
