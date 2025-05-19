@@ -1,3 +1,4 @@
+// src/main/java/org/example/Postac.java
 package org.example;
 
 public abstract class Postac {
@@ -18,14 +19,18 @@ public abstract class Postac {
     public void obron(int dmg) {
         int damageTaken = Math.max(0, dmg - defense);
         hp -= damageTaken;
-        System.out.println(name + " otrzymał " + damageTaken + " obrażeń.");
+        if (damageTaken > 0) {
+            System.out.println(name + " otrzymał " + damageTaken + " obrażeń. (" + hp + " HP pozostało)");
+        } else {
+            System.out.println(name + " uniknął obrażeń!");
+        }
     }
 
     public boolean czyZyje() {
         return hp > 0;
     }
 
-    public String getName () {
-        return this.name;
+    public String getName() {
+        return name;
     }
 }
