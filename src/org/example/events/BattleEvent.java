@@ -1,7 +1,7 @@
 // src/main/java/org/example/events/BattleEvent.java
 package org.example.events;
 
-import org.example.Postac;
+import org.example.classes.Postac;
 
 @FunctionalInterface
 public interface BattleEvent {

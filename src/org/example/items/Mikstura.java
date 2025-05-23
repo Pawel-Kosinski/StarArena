@@ -1,5 +1,5 @@
 // src/main/java/org/example/Mikstura.java
-package org.example;
+package org.example.items;
 
 import java.util.Objects;
 

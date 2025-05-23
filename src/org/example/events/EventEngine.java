@@ -1,11 +1,8 @@
 package org.example.events;
 
-import org.example.Postac;
-import org.example.Protos;
-import org.example.events.Event;
+import org.example.classes.Postac;
+import org.example.classes.Protos;
 
-import org.example.Postac;
-import org.example.Protos;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;

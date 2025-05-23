@@ -1,7 +1,16 @@
 // src/main/java/org/example/Main.java
 package org.example;
 
-import org.example.loader.AbilityLoader;
+import org.example.classes.Postac;
+import org.example.classes.Protos;
+import org.example.classes.Terranin;
+import org.example.classes.Zerg;
+import org.example.events.BattleEngine;
+import org.example.items.Bron;
+import org.example.items.Mikstura;
+import org.example.items.Rarity;
+import org.example.items.Zbroja;
+import org.example.abilities.AbilityLoader;
 
 import java.util.List;
 import java.util.Random;

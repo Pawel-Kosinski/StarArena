@@ -1,5 +1,7 @@
 // src/main/java/org/example/Postac.java
-package org.example;
+package org.example.classes;
+import org.example.items.*;
+
 import java.util.Random;
 import java.util.List;
 public abstract class Postac {
@@ -19,6 +21,15 @@ public abstract class Postac {
         this.defense = defense;
     }
     public abstract void atakuj(Postac target);
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
 
     protected int generateAttackDamage() {
         return minAttack + random.nextInt(maxAttack - minAttack + 1);

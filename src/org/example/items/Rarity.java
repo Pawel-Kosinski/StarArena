@@ -1,5 +1,5 @@
 // src/main/java/org/example/Rarity.java
-package org.example;
+package org.example.items;
 
 public enum Rarity {
     COMMON,

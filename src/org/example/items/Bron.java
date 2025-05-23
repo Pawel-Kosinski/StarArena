@@ -1,4 +1,4 @@
-package org.example;
+package org.example.items;
 
 public class Bron extends Przedmiot {
     private int attackModifier;

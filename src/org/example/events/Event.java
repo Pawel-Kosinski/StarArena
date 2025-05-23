@@ -1,6 +1,6 @@
 package org.example.events;
 
-import org.example.Postac;
+import org.example.classes.Postac;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 

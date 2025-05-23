@@ -1,7 +1,7 @@
 // src/main/java/org/example/loader/AbilityLoader.java
-package org.example.loader;
+package org.example.abilities;
 
-import org.example.Postac;
+import org.example.classes.Postac;
 import org.example.annotations.SpecjalnaZdolnosc;
 
 import java.lang.reflect.Method;

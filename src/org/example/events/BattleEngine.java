@@ -1,7 +1,8 @@
-package org.example;
+package org.example.events;
 
-import org.example.events.EventEngine;
-import org.example.loader.AbilityLoader;
+import org.example.classes.Postac;
+import org.example.items.Mikstura;
+import org.example.abilities.AbilityLoader;
 
 import java.util.*;
 
@@ -100,7 +101,7 @@ public class BattleEngine {
                 if (enemyCD.get(abl) == 0) ready.add(abl);
             }
             List<Mikstura> aiPots = enemy.getPotions();
-            if (!aiPots.isEmpty() && enemy.hp < 40 && random.nextBoolean()) {
+            if (!aiPots.isEmpty() && enemy.getHp() < 40 && random.nextBoolean()) {
                 enemy.usePotion(aiPots.get(0));
             } else {
                 boolean useAbility = !ready.isEmpty() && random.nextBoolean();

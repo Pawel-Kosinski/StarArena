@@ -1,5 +1,6 @@
-package org.example;
+package org.example.classes;
 
+import org.example.abilities.Zdolnosc;
 import org.example.annotations.SpecjalnaZdolnosc;
 
 public class Zerg extends Postac implements Zdolnosc {
