@@ -2,12 +2,20 @@
 package org.example.items;
 
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Mikstura extends Przedmiot {
     private final int amount;
     private final boolean isMana;
 
-    public Mikstura(String name, Rarity rarity, int amount, boolean isMana) {
+
+
+    @JsonCreator
+    public Mikstura(@JsonProperty("name") String name,
+                    @JsonProperty("rarity") Rarity rarity,
+                    @JsonProperty("amount") int amount,
+                    @JsonProperty("isMana") boolean isMana) {
         super(name, rarity);
         this.amount = amount;
         this.isMana = isMana;

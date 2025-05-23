@@ -6,6 +6,12 @@ public abstract class Przedmiot {
     protected String name;
     protected Rarity rarity;
 
+    public Przedmiot()
+    {
+        this.name = "Przedmiot";
+        this.rarity = Rarity.COMMON;
+    }
+
     public Przedmiot(String name, Rarity rarity) {
         this.name = name;
         this.rarity = rarity;
@@ -23,6 +29,8 @@ public abstract class Przedmiot {
     public String toString() {
         return String.format("%s [%s]", name, rarity);
     }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

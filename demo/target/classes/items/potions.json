@@ -1,0 +1,4 @@
+[
+  { "name": "Mikstura Lecznicza", "rarity": "COMMON", "amount": 20, "isMana": false },
+  { "name": "Mikstura Many", "rarity": "RARE", "amount": 30, "isMana": true }
+]

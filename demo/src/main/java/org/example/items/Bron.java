@@ -8,6 +8,10 @@ public class Bron extends Przedmiot {
         this.attackModifier = attackModifier;
     }
 
+    public Bron() {
+        super();
+    }
+
     public int getAttackModifier() {
         return attackModifier;
     }

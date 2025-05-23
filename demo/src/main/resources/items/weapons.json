@@ -1,0 +1,9 @@
+[
+  { "name": "Karabin Plazmowy", "rarity": "EPIC", "attackModifier": 10 },
+  { "name": "Pistolet Gaussowski", "rarity": "RARE", "attackModifier": 7 },
+  { "name": "Wyrzutnia Fotonowa", "rarity": "EPIC", "attackModifier": 15 },
+  { "name": "Laserowy Karabin Snajperski", "rarity": "RARE", "attackModifier": 12 },
+  { "name": "Granatnik Termiczny", "rarity": "RARE", "attackModifier": 8 },
+  { "name": "Kłujące Ostrza", "rarity": "COMMON", "attackModifier": 5 },
+  { "name": "Strzelba Plazmowa", "rarity": "RARE", "attackModifier": 9 }
+]

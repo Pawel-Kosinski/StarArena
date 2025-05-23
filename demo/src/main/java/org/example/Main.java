@@ -1,4 +1,3 @@
-// src/main/java/org/example/Main.java
 package org.example;
 
 import org.example.classes.Postac;
@@ -8,9 +7,9 @@ import org.example.classes.Zerg;
 import org.example.events.BattleEngine;
 import org.example.items.Bron;
 import org.example.items.Mikstura;
-import org.example.items.Rarity;
 import org.example.items.Zbroja;
 import org.example.abilities.AbilityLoader;
+import org.example.items.loader.ItemLoader;
 
 import java.util.List;
 import java.util.Random;
@@ -27,19 +26,12 @@ public class Main {
                 "\n" +
                 "Czy masz odwagę stanąć do walki i przejąć kontrolę nad Xerionem?\n");
 
-        // 1) Przygotuj bazę dostępnych przedmiotów
-        List<Bron> weapons = List.of(
-                new Bron("Karabin Plazmowy", Rarity.EPIC, 10),
-                new Bron("Pistolet Gaussowski", Rarity.RARE, 7)
-        );
-        List<Zbroja> armors = List.of(
-                new Zbroja("Lekki Pancerz", Rarity.COMMON, 5),
-                new Zbroja("Ciężka Zbroja", Rarity.RARE, 10)
-        );
-        List<Mikstura> allPotions = List.of(
-                new Mikstura("Mikstura Lecznicza", Rarity.COMMON, 20, false),
-                new Mikstura("Mikstura Many",     Rarity.RARE,   30, true)
-        );
+        ItemLoader itemLoader = new ItemLoader();
+
+        List<Bron> weapons = itemLoader.loadWeapons();
+        List<Zbroja> armors = itemLoader.loadArmors();
+        List<Mikstura> allPotions = itemLoader.loadPotions();
+
 
         // 2) Wybór bohatera
         System.out.println("Wybierz frakcję:");

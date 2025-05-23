@@ -8,6 +8,11 @@ public class Zbroja extends Przedmiot {
         this.defenseModifier = defenseModifier;
     }
 
+    public Zbroja()
+    {
+        super();
+    }
+
     public int getDefenseModifier() {
         return defenseModifier;
     }
