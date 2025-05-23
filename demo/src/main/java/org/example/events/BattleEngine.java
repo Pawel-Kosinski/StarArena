@@ -12,8 +12,7 @@ public class BattleEngine {
     private final Scanner scanner = new Scanner(System.in);
     private final Random random = new Random();
     private static final int COOLDOWN_TURNS = 3;
-    private static final double EVENT_PROBABILITY = 0.5; // 30% szans na zdarzenie
-
+    private static final double EVENT_PROBABILITY = 0.5; // 50% szans na zdarzenie
 
     public BattleEngine(AbilityLoader loader) {
         this.loader = loader;
@@ -44,7 +43,6 @@ public class BattleEngine {
                 eventEngine.applyRandomEvent(player);
             }
 
-
             // Faza akcji gracza
             System.out.println(player.getName() + ": Faza akcji");
             System.out.println("0) Normalny atak");
@@ -52,21 +50,32 @@ public class BattleEngine {
                 String abl = playerAbilities.get(i);
                 int cd = playerCD.get(abl);
                 System.out.printf("%d) %s %s\n",
-                        i+1,
+                        i + 1,
                         abl,
-                        cd>0 ? "(odnowienie: " + cd + ")" : "");
+                        cd > 0 ? "(odnowienie: " + cd + ")" : "");
             }
-            int choice;
             int base = playerAbilities.size() + 1;
             for (int i = 0; i < potions.size(); i++) {
                 Mikstura pot = potions.get(i);
                 System.out.printf("%d) Użyj mikstury: %s%n", base + i, pot);
             }
 
-            do {
+            int choice;
+            int maxChoice = playerAbilities.size() + potions.size();
+            while (true) {
                 System.out.print("Twój wybór: ");
-                choice = scanner.nextInt();
-            } while (choice < 0 || choice > playerAbilities.size() + potions.size());
+                String input = scanner.nextLine().trim();
+                try {
+                    choice = Integer.parseInt(input);
+                    if (choice >= 0 && choice <= maxChoice) {
+                        break;
+                    } else {
+                        System.out.println("Niepoprawny wybór, podaj liczbę od 0 do " + maxChoice + ".");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Niepoprawny format, podaj liczbę całkowitą.");
+                }
+            }
 
             // obsługa wyboru
             if (choice == 0) {
@@ -122,6 +131,6 @@ public class BattleEngine {
     }
 
     private void decrement(Map<String, Integer> cds) {
-        cds.replaceAll((k, v) -> v>0 ? v-1 : 0);
+        cds.replaceAll((k, v) -> v > 0 ? v - 1 : 0);
     }
 }

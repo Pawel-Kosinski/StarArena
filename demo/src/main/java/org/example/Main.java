@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.InputUtils.InputUtils;
 import org.example.classes.Postac;
 import org.example.classes.Protos;
 import org.example.classes.Terranin;
@@ -10,12 +11,14 @@ import org.example.items.Mikstura;
 import org.example.items.Zbroja;
 import org.example.abilities.AbilityLoader;
 import org.example.items.loader.ItemLoader;
+import org.example.EnemySetup.EnemySetup;
 
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class Main
+{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random rand = new Random();
@@ -34,47 +37,18 @@ public class Main {
 
 
         // 2) Wybór bohatera
-        System.out.println("Wybierz frakcję:");
-        System.out.println("1) Terranin");
-        System.out.println("2) Zerg");
-        System.out.println("3) Protos");
-        System.out.print("Twój wybór: ");
-        int choice = scanner.nextInt();
-        System.out.print("Podaj imię postaci: ");
-        String name = scanner.next();
-
-        Postac player = switch (choice) {
-            case 2 -> new Zerg(name);
-            case 3 -> new Protos(name);
-            default -> new Terranin(name);
-        };
+        Postac player = InputUtils.wybierzPostac(scanner);
 
         // 3) Wybór broni (0 = bez broni)
-        System.out.println("\nWybierz broń (0 = brak):");
-        System.out.println("0) Brak broni");
-        for (int i = 0; i < weapons.size(); i++) {
-            System.out.printf("%d) %s%n", i+1, weapons.get(i));
-        }
-        System.out.print("Twój wybór: ");
-        int wChoice = scanner.nextInt();
-        if (wChoice > 0 && wChoice <= weapons.size()) {
-            player.equipWeapon(weapons.get(wChoice - 1));
-        } else {
-            System.out.println("Bez broni.");
+        Bron chosenWeapon = InputUtils.wybierzBron(scanner, weapons);
+        if (chosenWeapon != null) {
+            player.equipWeapon(chosenWeapon);
         }
 
         // 4) Wybór zbroi (0 = bez zbroi)
-        System.out.println("\nWybierz zbroję (0 = brak):");
-        System.out.println("0) Brak zbroi");
-        for (int i = 0; i < armors.size(); i++) {
-            System.out.printf("%d) %s%n", i+1, armors.get(i));
-        }
-        System.out.print("Twój wybór: ");
-        int aChoice = scanner.nextInt();
-        if (aChoice > 0 && aChoice <= armors.size()) {
-            player.equipArmor(armors.get(aChoice - 1));
-        } else {
-            System.out.println("Bez zbroi.");
+        Zbroja chosenArmor = InputUtils.wybierzZbroje(scanner, armors);
+        if (chosenArmor != null) {
+            player.equipArmor(chosenArmor);
         }
 
         List<Mikstura> potions = player instanceof Protos
@@ -82,45 +56,16 @@ public class Main {
                 : allPotions.stream().filter(p -> !p.isMana()).toList();
 
         // 5) Mikstura (jak poprzednio)
-        System.out.println("\nMasz dodatkowo miksturę? (tak/nie)");
-        if (scanner.next().equalsIgnoreCase("tak")) {
-            System.out.println("Wybierz miksturę:");
-            for (int i = 0; i < potions.size(); i++) {
-                System.out.printf("%d) %s%n", i+1, potions.get(i));
-            }
-            System.out.print("Twój wybór: ");
-            player.addPotion(potions.get(scanner.nextInt() - 1));
+        Mikstura chosenPotion = InputUtils.wybierzMiksture(scanner, potions);
+        if (chosenPotion != null) {
+            player.addPotion(chosenPotion);
         }
 
         player.showInventory();
 
         // 6) Ekwipowanie przeciwnika AI
         Postac enemy = new Zerg("AI-Zerg");
-        // broń AI: 50% szans na brak
-        if (rand.nextBoolean()) {
-            Bron bp = weapons.get(rand.nextInt(weapons.size()));
-            enemy.equipWeapon(bp);
-        } else {
-            System.out.println("AI bez broni.");
-        }
-        // zbroja AI: 50% szans na brak
-        if (rand.nextBoolean()) {
-            Zbroja za = armors.get(rand.nextInt(armors.size()));
-            enemy.equipArmor(za);
-        } else {
-            System.out.println("AI bez zbroi.");
-        }
-
-        // mikstura AI: 50% szans
-        List<Mikstura> potionsAI = enemy instanceof Protos
-                ? allPotions
-                : allPotions.stream().filter(p -> !p.isMana()).toList();
-
-        if (rand.nextBoolean()) {
-            Mikstura pm = potionsAI.get(rand.nextInt(potionsAI.size()));
-            enemy.addPotion(pm);
-        }
-        enemy.showInventory();
+        EnemySetup.initializeEnemy(enemy, weapons, armors, allPotions);
 
         // 7) Rozpocznij bitwę
         AbilityLoader loader = new AbilityLoader(
