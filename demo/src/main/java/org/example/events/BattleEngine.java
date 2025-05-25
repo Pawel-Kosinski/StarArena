@@ -9,14 +9,21 @@ import java.util.*;
 public class BattleEngine {
     private final AbilityLoader loader;
     private final EventEngine eventEngine;
-    private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner;
     private final Random random = new Random();
     private static final int COOLDOWN_TURNS = 3;
-    private static final double EVENT_PROBABILITY = 0.5; // 50% szans na zdarzenie
+    private static final double EVENT_PROBABILITY = 0.5;
 
-    public BattleEngine(AbilityLoader loader) {
+    // Konstruktor z zewnętrznym Scannerem (np. testowy)
+    public BattleEngine(AbilityLoader loader, Scanner scanner) {
         this.loader = loader;
         this.eventEngine = new EventEngine();
+        this.scanner = scanner;
+    }
+
+    // Domyślny konstruktor do produkcji (System.in)
+    public BattleEngine(AbilityLoader loader) {
+        this(loader, new Scanner(System.in));
     }
 
     public void startBattle(Postac player, Postac enemy) {
@@ -92,7 +99,6 @@ public class BattleEngine {
                 }
 
             } else {
-                // użycie mikstury
                 Mikstura pot = potions.get(choice - base);
                 player.usePotion(pot);
             }

@@ -5,14 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96e1efc7-5c8e-46bd-a70c-fbc59179f8dc" name="Changes" comment="Change of damage values">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/EnemySetup/EnemySetup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/InputUtils/InputUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/Campaign/Campaign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/org/example/BattleEngineInteractiveTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/test/java/org/example/ItemLoaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/org/example/EnemySetup/EnemySetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/EnemySetup/EnemySetup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/org/example/classes/Postac.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/classes/Postac.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/org/example/events/BattleEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/org/example/events/BattleEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/org/example/EnemySetup/EnemySetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/org/example/EnemySetup/EnemySetup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/org/example/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/target/classes/org/example/classes/Postac.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/org/example/classes/Postac.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/target/classes/org/example/events/BattleEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/org/example/events/BattleEngine.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,36 +62,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/pawel.kosinski/IdeaProjects/StarArena/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
+    "JUnit.BattleEngineInteractiveTest.executor": "Run",
+    "JUnit.BattleEngineTest.executor": "Run",
+    "JUnit.ItemLoaderTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/05lan/IdeaProjects/StarArena/demo/src/main/java/org/example/events",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/pawel.kosinski/IdeaProjects/StarArena/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\05lan\IdeaProjects\StarArena\demo\src\main\resources\items" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BattleEngineTest">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="demo" />
@@ -95,6 +103,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BattleEngineInteractiveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.BattleEngineInteractiveTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleEngineTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.BattleEngineTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ItemLoaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.ItemLoaderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BattleEngineTest" />
+        <item itemvalue="JUnit.BattleEngineInteractiveTest" />
+        <item itemvalue="JUnit.ItemLoaderTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -117,7 +177,10 @@
       <workItem from="1747926973396" duration="652000" />
       <workItem from="1747997396201" duration="8773000" />
       <workItem from="1748013502306" duration="932000" />
-      <workItem from="1748022637158" duration="4937000" />
+      <workItem from="1748022637158" duration="5509000" />
+      <workItem from="1748038555860" duration="1947000" />
+      <workItem from="1748041751162" duration="316000" />
+      <workItem from="1748088527749" duration="6857000" />
     </task>
     <task id="LOCAL-00001" summary="First base battle and base class implementations">
       <option name="closed" value="true" />

@@ -12,11 +12,11 @@ import java.util.Random;
 public class EnemySetup {
     private static final Random rand = new Random();
 
-    /**
-     * Ustawia ekwipunek AI (broń, zbroja, mikstura) losowo.
-     */
-    public static void initializeEnemy(Postac enemy, List<Bron> weapons, List<Zbroja> armors, List<Mikstura> allPotions) {
-        // broń AI: 50% szans na brak
+    /** Ustawia ekwipunek AI (broń, zbroja, mikstura) losowo. */
+    public static void initializeEnemy(Postac enemy,
+                                       List<Bron> weapons,
+                                       List<Zbroja> armors,
+                                       List<Mikstura> allPotions) {
         if (rand.nextBoolean() && !weapons.isEmpty()) {
             Bron bp = weapons.get(rand.nextInt(weapons.size()));
             enemy.equipWeapon(bp);
@@ -24,7 +24,6 @@ public class EnemySetup {
             System.out.println(enemy.getName() + " bez broni.");
         }
 
-        // zbroja AI: 50% szans na brak
         if (rand.nextBoolean() && !armors.isEmpty()) {
             Zbroja za = armors.get(rand.nextInt(armors.size()));
             enemy.equipArmor(za);
@@ -32,16 +31,22 @@ public class EnemySetup {
             System.out.println(enemy.getName() + " bez zbroi.");
         }
 
-        // mikstura AI: 50% szans
         List<Mikstura> potionsAI = enemy instanceof Protos
                 ? allPotions
                 : allPotions.stream().filter(p -> !p.isMana()).toList();
-
         if (!potionsAI.isEmpty() && rand.nextBoolean()) {
             Mikstura pm = potionsAI.get(rand.nextInt(potionsAI.size()));
             enemy.addPotion(pm);
         }
 
         enemy.showInventory();
+    }
+
+    /**
+     * Zmienia imię istniejącej postaci i zwraca ją z powrotem.
+     */
+    public static Postac withName(Postac enemy, String newName) {
+        enemy.setName(newName);
+        return enemy;
     }
 }

@@ -22,6 +22,10 @@ public abstract class Postac
         this.defense = defense;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public abstract void atakuj(Postac target);
 
     public int getHp() {
